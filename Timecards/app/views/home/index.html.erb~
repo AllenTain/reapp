@@ -1,0 +1,34 @@
+<h1>Home#index</h1>
+<%= form_for :timecard do |t| %>
+  <%= t.label :start_Date %>
+  <%= t.date_select :title %><br>
+  <%= t.label :end_Date %>
+  <%= t.date_select :title %><br>
+  <%= t.submit :filter_Timecards%>
+<% end %>
+<table border ="1px">
+  <th>
+    <td>Exception</td>
+    <td>Date</td>
+    <td>Worked</td>
+    <td>Overtime</td>
+    <td>Break</td>
+    <td>Total</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </th>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>

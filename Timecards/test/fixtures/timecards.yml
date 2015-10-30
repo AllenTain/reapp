@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  total_hours: 1.5
+  overtime_hours: 1.5
+  break_hours: 1.5
+  worked_hours: 1.5
+  lunch_hours: 1.5
+  occurrence: 2015-10-29
+  note: MyText
+  exceptions: false
+  type: 
+  type_id: 
+  user_id: 
+  is_valid: false
+
+two:
+  name: MyString
+  total_hours: 1.5
+  overtime_hours: 1.5
+  break_hours: 1.5
+  worked_hours: 1.5
+  lunch_hours: 1.5
+  occurrence: 2015-10-29
+  note: MyText
+  exceptions: false
+  type: 
+  type_id: 
+  user_id: 
+  is_valid: false
