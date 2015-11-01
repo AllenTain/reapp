@@ -3,10 +3,17 @@ class TimecardsController < ApplicationController
   end
 
   def index
-    @timecards = Timecard.all
+    @timecards 	= Timecard.all
+    @timecard 	= Timecard.new
   end
 
   def show
     @timecard = Timecard.all
+  end
+
+  def create
+    respond_to do |format|
+      format.json { render :json => @timecards }
+    end
   end
 end

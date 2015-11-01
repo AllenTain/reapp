@@ -11,9 +11,18 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery-ui
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-datepicker/core
 
+$('form').submit ->
+    valuesToSubmit = $(this).serialize()
+$.ajax(
+    type: 'POST'
+    url: $(this).attr('action')
+    data: valuesToSubmit
+    dataType: 'JSON').success (json) ->
+    console.log 'success', json
+return
+  false

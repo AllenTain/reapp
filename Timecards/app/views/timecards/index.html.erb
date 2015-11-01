@@ -1,10 +1,11 @@
-<h1>Home#index</h1>
-<form>
-Start Date: <input type ="text" data-provide='datepicker'>
-End Date: <input type ="text" data-provide='datepicker'>
-<input type = "Submit">
+<h1>Reporting</h1>
+
+<form id="filter" data-remote="true">
+  Start Date: <input type ="text" name="start_date" data-provide='datepicker'>
+  End Date: <input type ="text" name="end_date" data-provide='datepicker'>
+<input type = "Submit" value = "Submit">
 </form>
-<table border ="1px">
+<table border ="1px" class="awef">
   <tr>
     <th>Exception</th>
     <th>Date</th>
@@ -32,3 +33,4 @@ End Date: <input type ="text" data-provide='datepicker'>
   </tr>
   <% end %>
 </table>
+<%= render @timecards %>
