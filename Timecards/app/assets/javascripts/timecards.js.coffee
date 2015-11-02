@@ -4,16 +4,3 @@
 
 
 $(document).ready ->
-  $('#filter').submit (e) ->
-  	e.preventDefault()
-  	stuff = $(this).serialize()
-  	$.ajax
-        url: '/timecards'
-        method: 'post'
-        dataType: 'json'
-        data: stuff
-        success: ->
-        	console.log 'ess'
-       	error: ->
-       		console.log 'error'
-       		console.log stuff

@@ -1,6 +1,6 @@
 <h1>Reporting</h1>
 
-<form id="filter" data-remote="true">
+<form id="filter" action="/timecards">
   Start Date: <input type ="text" name="start_date" data-provide='datepicker'>
   End Date: <input type ="text" name="end_date" data-provide='datepicker'>
 <input type = "Submit" value = "Submit">
@@ -18,20 +18,20 @@
     <th>In</th>
     <th>Out</th>
   </tr>
-  <% @timecards.each do |timecard| %>
+  <%= @dateRange.each do |timecard| %>
   <tr>
-    <td><%= timecard[:name] %></td>
-    <td><%= timecard[:occurrence] %></td>
-    <td><%= timecard[:worked_hours] %></td>
-    <td><%= timecard[:overtime_hours] %></td>
-    <td><%= timecard[:break_hours] %></td>
-    <td><%= timecard[:total_hours] %></td>
-    <td><%= timecard[:exceptions] %></td>
-    <td><%= timecard[:exceptions] %></td>
-    <td><%= timecard[:exceptions] %></td>
-    <td><%= timecard[:exceptions] %></td>
+    <td>hey</td>
+    <td><%= timecard %></td>
+    <td>hey</td>
+    <td>hey</td>
+    <td>hey</td>
+    <td>hey</td>
+    <td>hey</td>
+    <td>hey</td>
+    <td>hey</td>
+    <td>hey</td>
   </tr>
   <% end %>
 </table>
-<%= @params %>
+
 
