@@ -20,17 +20,18 @@
   </tr>
   <% @timecards.each do |timecard| %>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><%= timecard[:name] %></td>
+    <td><%= timecard[:occurrence] %></td>
+    <td><%= timecard[:worked_hours] %></td>
+    <td><%= timecard[:overtime_hours] %></td>
+    <td><%= timecard[:break_hours] %></td>
+    <td><%= timecard[:total_hours] %></td>
+    <td><%= timecard[:exceptions] %></td>
+    <td><%= timecard[:exceptions] %></td>
+    <td><%= timecard[:exceptions] %></td>
+    <td><%= timecard[:exceptions] %></td>
   </tr>
   <% end %>
 </table>
-<%= render @timecards %>
+<%= @params %>
+

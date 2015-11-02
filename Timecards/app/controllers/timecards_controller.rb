@@ -5,10 +5,10 @@ class TimecardsController < ApplicationController
   def index
     @timecards 	= Timecard.all
     @timecard 	= Timecard.new
+    @params = params
   end
 
   def show
-    @timecard = Timecard.all
   end
 
   def create
