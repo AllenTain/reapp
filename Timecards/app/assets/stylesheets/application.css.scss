@@ -1,0 +1,221 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require bootstrap-datepicker
+ */
+
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+/* Fonts */
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+/* Global Variables */
+
+$primary-blue: #3498DB;
+$primary-blue-darker: #2980B9;
+$secondary-blue: #2C3E50;
+$red-color: #E74C3C;
+$grey: #E7E7E7;
+
+/* Helpers */
+
+.bg-main {
+    color: #9FB3B8;
+    background-color: $grey;
+}
+
+.noPadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.noPadding:first {
+    margin-right: 1rem !important;
+}
+
+.colCentered {
+    float: none;
+    margin: 0 auto;
+}
+
+
+/* Horizontal Nav Bar */
+
+.navbar {
+    border-radius: 0rem !important;
+}
+
+.navbar > .navbar-currentView {
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    width: 180px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Vertical Nav Bar */
+
+#wrapper {
+    padding-left: 0;
+    overflow-x: hidden;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#menuToggle {
+    padding: 0 !important;
+    font-size: 1.3em;
+    position: absolute;
+    top: 0;
+    right: 23px;
+}
+
+#wrapper.toggled #sidebarWrapper {
+    width: 250px;
+}
+
+#pageContentWrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #pageContentWrapper {
+    position: absolute;
+    margin-right: -220px;
+}
+
+#sidebarWrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: $secondary-blue;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+
+/* Sidebar Styles */
+
+.sidebarNav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#sidebarWrapper > hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.sidebarNav li {
+    line-height: 40px;
+    font-size: 1em;
+    color: #fff;
+}
+
+.sidebarNav > .sidebarHeading {
+    text-indent: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sidebarNav li a {
+    padding-left: 20px;
+    display: block;
+    text-decoration: none;
+    color: #849DB5;
+}
+
+.sidebarNav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebarNav li a:active,
+.sidebarNav li a:focus {
+    text-decoration: none;
+}
+
+.sidebarNav > .sidebarBrand {
+    height: 54px;
+    font-weight: 700;
+    line-height: 47px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    background-color: $primary-blue;
+}
+
+.sidebarNav > .sidebarBrand a,
+.sidebarNav > .sidebarBrand a:hover {
+    color: #fff;
+    background: none;
+}
+
+.sidebarNav > .activeTab {
+    background-color: #fff;
+}
+
+.activeTab a {
+    color: $secondary-blue !important;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 200px;
+    }
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+    #sidebarWrapper {
+        width: 220px;
+    }
+    #wrapper.toggled #sidebarWrapper {
+        width: 60px;
+    }
+    #pageContentWrapper {
+        padding: 20px;
+        position: relative;
+    }
+    #wrapper.toggled #pageContentWrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+
+/* Pills and Alignment */
+
+.notificationPill {
+    margin-left: 10%;
+}

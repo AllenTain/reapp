@@ -1,23 +1,97 @@
-<h1>Reporting</h1>
-
-<form id="filter" data-remote="true">
-  Start Date: <input type ="text" name="start_date" data-provide='datepicker'>
-  End Date: <input type ="text" name="end_date" data-provide='datepicker'>
-<input type = "Submit" value = "Submit">
-</form>
-<table border ="1px" class="awef">
-  <tr>
-    <th>Exception</th>
-    <th>Date</th>
-    <th>Worked</th>
-    <th>Overtime</th>
-    <th>Break</th>
-    <th>Total</th>
-    <th>In</th>
-    <th>Out</th>
-    <th>In</th>
-    <th>Out</th>
-  </tr>
+<div class="card card-block">
+  <form class="form-inline" id="filter" data-remote="true">
+    <div class="row">
+      <div class="col-sm-6 col-lg-6">
+        <h5>Filter Date</h5>
+      </div>
+      <div class="col-sm-6 col-lg-6">
+        <h5>Options</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-lg-6">
+        <div class="col-sm-5 col-lg-5 noPadding">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon"><i class="fa fa-calendar-check-o"></i></div>
+              <input type="text" class="form-control datepicker" name="start_date" data-provide='datepicker' placeholder="Start Date">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5 col-lg-5">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon"><i class="fa fa-calendar-check-o"></i></div>
+              <input type="text" class="form-control datepicker" name="start_date" data-provide='datepicker' placeholder="End Date">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2 col-lg-2">
+          <button type="submit" class="btn btn-primary">Clear</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-6">
+        <div class="col-sm-5 col-lg-5 noPadding">
+          <button class="btn btn-primary" type="submit">Select Employees</button>
+        </div>
+        <div class="col-sm-5 col-lg-5 noPadding">
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Display Settings
+            </button>
+          </div>
+        </div>
+        <div class="col-sm-2 col-lg-2 noPadding">
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Export
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Download as CSV</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Download as PDF</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="collapse" id="collapseExample">
+  <div class="card card-block">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 col-lg-8 col-sm-8">
+    <h5>Filters Added:
+    <span class="label label-primary">Hourly Employees Only <i class="fa fa-times"></i></span>
+    <span class="label label-success">Filter # 2 <i class="fa fa-times"></i></span>
+    <span class="label label-info">Filter # 3 <i class="fa fa-times"></i></span>
+    <span class="label label-warning">Filter # 4 <i class="fa fa-times"></i></span>
+    </h5>
+  </div>
+  <div class="col-md-4 col-lg-4 col-sm-4">
+    <h4 class="text-right">
+    <button type="button" class="btn btn-danger-outline">1 Exception Found <i class="fa fa-times"></i></button>
+    </h4>
+  </div>
+</div>
+<table class="table table-hover">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Exception</th>
+      <th>Date</th>
+      <th>Worked</th>
+      <th>Overtime</th>
+      <th>Break</th>
+      <th>Total</th>
+      <th>In</th>
+      <th>Out</th>
+      <th>In</th>
+      <th>Out</th>
+    </tr>
+  </thead>
   <% @timecards.each do |timecard| %>
   <tr>
     <td><%= timecard[:name] %></td>
@@ -34,4 +108,3 @@
   <% end %>
 </table>
 <%= @params %>
-
