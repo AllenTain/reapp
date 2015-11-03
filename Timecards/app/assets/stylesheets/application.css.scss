@@ -15,32 +15,34 @@
  *= require bootstrap-datepicker
  */
 
+/* Global Variables */
+$brand-primary-darker: #2980B9;
+$brand-primary: #3498DB;
+$grey: #E7E7E7;
+$red-color: #E74C3C;
+$secondary-blue: #2C3E50;
+
+/* Import Vendor CSS */
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
 /* Fonts */
-
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-/* Global Variables */
 
-$primary-blue: #3498DB;
-$primary-blue-darker: #2980B9;
-$secondary-blue: #2C3E50;
-$red-color: #E74C3C;
-$grey: #E7E7E7;
+
 
 /* Helpers */
 
 .bg-main {
-    color: #9FB3B8;
     background-color: $grey;
+    color: #9FB3B8;
 }
 
 .noPadding {
-    padding: 0 !important;
     margin: 0 !important;
+    padding: 0 !important;
 }
 
 .noPadding:first {
@@ -61,18 +63,18 @@ $grey: #E7E7E7;
 
 .navbar > .navbar-currentView {
     color: #fff;
-    text-align: center;
-    font-weight: 700;
-    width: 180px;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    width: 180px;
 }
 
 
 /* Vertical Nav Bar */
 
 #wrapper {
-    padding-left: 0;
     overflow-x: hidden;
+    padding-left: 0;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -85,8 +87,8 @@ $grey: #E7E7E7;
 
 #menuToggle {
 	display: inline;
-    padding: 0 !important;
     font-size: 1.3em;
+    padding: 0 !important;
     position: absolute;
     right: 3px;
 }
@@ -96,26 +98,26 @@ $grey: #E7E7E7;
 }
 
 #pageContentWrapper {
-    width: 100%;
-    position: absolute;
     padding: 15px;
+    position: absolute;
+    width: 100%;
 }
 
 #wrapper.toggled #pageContentWrapper {
-    position: absolute;
     margin-right: -220px;
+    position: absolute;
 }
 
 #sidebarWrapper {
-    z-index: 1000;
-    position: fixed;
-    left: 250px;
-    width: 0;
-    height: 100%;
-    margin-left: -250px;
-    overflow-y: auto;
-    overflow-x: hidden;
     background: $secondary-blue;
+    height: 100%;
+    left: 250px;
+    margin-left: -250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    width: 0;
+    z-index: 1000;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -126,12 +128,12 @@ $grey: #E7E7E7;
 /* Sidebar Styles */
 
 .sidebarNav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     position: absolute;
     top: 0;
     width: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
 }
 
 #sidebarWrapper > hr {
@@ -139,27 +141,27 @@ $grey: #E7E7E7;
 }
 
 .sidebarNav li {
-    line-height: 40px;
-    font-size: 1em;
     color: #fff;
+    font-size: 1em;
+    line-height: 40px;
 }
 
 .sidebarNav > .sidebarHeading {
-    text-indent: 20px;
     font-family: 'Montserrat', sans-serif;
+    text-indent: 20px;
 }
 
 .sidebarNav li a {
-    padding-left: 20px;
-    display: block;
-    text-decoration: none;
     color: #849DB5;
+    display: block;
+    padding-left: 20px;
+    text-decoration: none;
 }
 
 .sidebarNav li a:hover {
-    text-decoration: none;
-    color: #fff;
     background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-decoration: none;
 }
 
 .sidebarNav li a:active,
@@ -168,18 +170,18 @@ $grey: #E7E7E7;
 }
 
 .sidebarNav > .sidebarBrand {
-    height: 54px;
-    font-weight: 700;
-    line-height: 47px;
+    background-color: $brand-primary;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    background-color: $primary-blue;
+    font-weight: 700;
+    height: 54px;
+    line-height: 47px;
 }
 
 .sidebarNav > .sidebarBrand a,
 .sidebarNav > .sidebarBrand a:hover {
-    color: #fff;
     background: none;
+    color: #fff;
 }
 
 .sidebarNav > .activeTab {
@@ -208,8 +210,8 @@ $grey: #E7E7E7;
         position: relative;
     }
     #wrapper.toggled #pageContentWrapper {
-        position: relative;
         margin-right: 0;
+        position: relative;
     }
 }
 
