@@ -84,11 +84,11 @@ $grey: #E7E7E7;
 }
 
 #menuToggle {
+	display: inline;
     padding: 0 !important;
     font-size: 1.3em;
     position: absolute;
-    top: 0;
-    right: 23px;
+    right: 3px;
 }
 
 #wrapper.toggled #sidebarWrapper {
