@@ -6,3 +6,11 @@
   text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
+
+.daterangepicker td.in-range {
+	background: #C3E1FF !important; 
+}
+
+.daterangepicker td.active{
+	background: #357ebd !important; 
+}
