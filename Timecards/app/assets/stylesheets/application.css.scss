@@ -1,0 +1,288 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require bootstrap-datepicker
+ *= require daterangepicker-bs3
+ */
+
+/* Global Variables */
+$brand-primary: 		#3498DB;
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+$grey: 					#E7E7E7;
+$red-color: 			#E74C3C;
+$secondary-blue: 		#2C3E50;
+$body-bg: 				#F7F7F7;
+
+/* Import Vendor CSS */
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+
+/* Defaults */
+* {
+  	margin: 0;
+  	padding: 0; 
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* Bootstrap */
+.btn-primary {
+    box-shadow: 0 3px 0 0 darken($brand-primary,20);
+}
+.btn-danger {
+    box-shadow: 0 3px 0 0 darken($red-color,20);
+}
+.btn-success {
+	box-shadow: 0 3px 0 0 darken($brand-success,20);
+}
+.btn-secondary {
+	box-shadow: 0 3px 0 0 darken($grey,20);
+}
+.btn-warning {
+	box-shadow: 0 3px 0 0 darken($brand-warning,20);
+}
+.btn-danger {
+	box-shadow: 0 3px 0 0 darken($brand-danger,20);
+}
+
+/* Helpers */
+
+.bg-main {
+    background-color: #ffffff;
+    color: #9FB3B8;
+    border-bottom: 1px solid $grey;
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,0.05)
+}
+
+.noPadding {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.noPadding:first {
+    margin-right: 1rem !important;
+}
+
+.colCentered {
+	display: block;
+    float: none;
+    margin: 0 auto;
+}
+
+.input-sm{
+	padding: 0.16rem 0.75rem;
+}
+
+/* Horizontal Nav Bar */
+
+.navbar {
+    border-radius: 0rem !important;
+}
+
+.navbar > .navbar-currentView {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    width: 180px;
+}
+
+
+/* Vertical Nav Bar */
+
+#wrapper {
+    overflow-x: hidden;
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#menuToggle {
+	display: inline;
+    font-size: 1.3em;
+    padding: 0 !important;
+    position: absolute;
+    right: 3px;
+}
+
+#wrapper.toggled #sidebarWrapper {
+    width: 250px;
+}
+
+#pageContentWrapper .nav {
+    padding: 15px;
+    position: absolute;
+    width: 100%;
+}
+
+#wrapper.toggled #pageContentWrapper  {
+    margin-right: -220px;
+    position: absolute;
+}
+
+#sidebarWrapper {
+    background: $secondary-blue;
+    height: 100%;
+    left: 250px;
+    margin-left: -250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    width: 0;
+    z-index: 1000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#sidebarWrapper hr{
+	border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Sidebar Styles */
+
+.sidebarNav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#sidebarWrapper > hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.sidebarNav li {
+    color: #fff;
+    font-size: 0.9em;
+    line-height: 35px;
+}
+
+.sidebarNav > .sidebarHeading {
+    font-family: 'Montserrat', sans-serif;
+    text-indent: 20px;
+}
+
+.sidebarNav li a {
+    color: #849DB5;
+    display: block;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.sidebarNav li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebarNav li a:active,
+.sidebarNav li a:focus {
+    text-decoration: none;
+}
+
+.sidebarNav > .sidebarBrand {
+    background-color: $brand-primary;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    height: 47px;
+    line-height: 47px;
+}
+
+.sidebarNav > .sidebarBrand a,
+.sidebarNav > .sidebarBrand a:hover {
+    background: none;
+    color: #fff;
+}
+
+.sidebarNav > .activeTab {
+    background-color: #F7F7F7;
+}
+
+.activeTab a {
+    color: $secondary-blue !important;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 200px;
+    }
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+    #sidebarWrapper {
+        width: 220px;
+    }
+    #wrapper.toggled #sidebarWrapper {
+        width: 60px;
+    }
+    #pageContentWrapper {
+        padding: 20px;
+        position: relative;
+    }
+    #wrapper.toggled #pageContentWrapper {
+        margin-right: 0;
+        padding-left: 60px;
+        position: relative;
+    }
+    #wrapper.toggled nav{
+    	padding-left: 60px;
+    }
+}
+
+/* User Profile */
+#userProfileImage{
+	float: right;
+	display: inline-block;
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	background: url(http://hellogiggles.hellogiggles.netdna-cdn.com/wp-content/uploads/2014/05/09/olivia-wilde-featured.jpg) no-repeat;
+	background-size: 35px 35px;
+}
+
+#profileNavDropdown{
+	margin-top: 35px;
+	margin-right:35px;
+
+}
+/* Pills and Alignment */
+
+.notificationPill {
+    margin-top:9px;
+    margin-right:5px;
+}

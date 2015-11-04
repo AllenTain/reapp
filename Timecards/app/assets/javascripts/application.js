@@ -15,5 +15,38 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require tether
 //= require bootstrap-datepicker/core
+//= require bootstrap-sprockets
+//= require moment
+//= require daterangepicker
 
+//Window on Load Function
+$(window).load(function() {
+    initMenuToggle();
+});
+
+//initMenu and init the on click listener 
+function initMenuToggle() {
+    $("#menuToggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+        $('.menuToggleIcon').toggleClass("fa-flip-horizontal");
+        if ($('#wrapper').hasClass('toggled')) {
+            initToolTips(true)
+        } else {
+            initToolTips(false)
+        }
+        $('.navHidden').toggle();
+    });
+};
+
+//Tooltip logic to disable based on menu position
+function initToolTips(boolean) {
+    if (boolean) {
+        $('[data-toggle="tooltip"]').tooltip('enable');
+    } else {
+        $('[data-toggle="tooltip"]').tooltip('disable');
+
+    }
+}
