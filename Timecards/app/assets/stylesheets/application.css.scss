@@ -50,14 +50,14 @@ h1,h2,h3,h4,h5,h6{
 .btn-primary {
     box-shadow: 0 3px 0 0 darken($brand-primary,20);
 }
+.btn-default {
+    box-shadow: 0 3px 0 0 darken($grey,20);
+}
 .btn-danger {
     box-shadow: 0 3px 0 0 darken($red-color,20);
 }
 .btn-success {
 	box-shadow: 0 3px 0 0 darken($brand-success,20);
-}
-.btn-secondary {
-	box-shadow: 0 3px 0 0 darken($grey,20);
 }
 .btn-warning {
 	box-shadow: 0 3px 0 0 darken($brand-warning,20);
@@ -65,7 +65,14 @@ h1,h2,h3,h4,h5,h6{
 .btn-danger {
 	box-shadow: 0 3px 0 0 darken($brand-danger,20);
 }
-
+.inputLabel{
+	font-size: 0.7em;
+	font-weight: 700;
+	opacity: 0.7;
+	font-family: 'Montserrat', sans-serif;
+	position: absolute;
+	margin-top: -1rem;
+}
 /* Helpers */
 
 .bg-main {
@@ -94,6 +101,10 @@ h1,h2,h3,h4,h5,h6{
 	padding: 0.16rem 0.75rem;
 }
 
+.noShadow{
+	box-shadow: none !important;
+}
+
 /* Horizontal Nav Bar */
 
 .navbar {
@@ -114,10 +125,10 @@ h1,h2,h3,h4,h5,h6{
 #wrapper {
     overflow-x: hidden;
     padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    // -webkit-transition: all 0.5s ease;
+    // -moz-transition: all 0.5s ease;
+    // -o-transition: all 0.5s ease;
+    // transition: all 0.5s ease;
 }
 
 #wrapper.toggled {
@@ -129,7 +140,9 @@ h1,h2,h3,h4,h5,h6{
     font-size: 1.3em;
     padding: 0 !important;
     position: absolute;
-    right: 3px;
+    right: 1.5rem;
+    bottom: 1rem;
+    color: white;
 }
 
 #wrapper.toggled #sidebarWrapper {
@@ -157,10 +170,10 @@ h1,h2,h3,h4,h5,h6{
     position: fixed;
     width: 0;
     z-index: 1000;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    // -webkit-transition: all 0.5s ease;
+    // -moz-transition: all 0.5s ease;
+    // -o-transition: all 0.5s ease;
+    // transition: all 0.5s ease;
 }
 
 #sidebarWrapper hr{

@@ -28,6 +28,7 @@ $(window).load(function() {
 
 //initMenu and init the on click listener 
 function initMenuToggle() {
+	$('[data-tooltip-type="alwaysOn"]').tooltip('enable');
     $("#menuToggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
@@ -43,10 +44,11 @@ function initMenuToggle() {
 
 //Tooltip logic to disable based on menu position
 function initToolTips(boolean) {
+	$sideMenuTooltips = $('[data-tooltip-type="sideMenu"]')
+	$alwaysOnTooltips = $('[data-tooltip-type="alwaysOn"]')
     if (boolean) {
-        $('[data-toggle="tooltip"]').tooltip('enable');
+        $sideMenuTooltips.tooltip('enable');
     } else {
-        $('[data-toggle="tooltip"]').tooltip('disable');
-
+        $sideMenuTooltips.tooltip('disable');
     }
 }

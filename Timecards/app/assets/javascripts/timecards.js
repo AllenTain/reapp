@@ -3,28 +3,22 @@ $(window).load(function() {
 });
 
 function init() {
-  initSubmitAjax();
   initDatePicker();
   initDateRangePicker();
 }
 
-function initSubmitAjax()  {
-  var stuff;
-  $('#filter').submit(function(e) {
-    return e.preventDefault();
-  });
-  stuff = $(this).serialize();
+function initSubmitAjax(start, end)  {
+  var data = {'startDate':start , 'endDate':end}
   return $.ajax({
     url: '/timecards',
     method: 'post',
     dataType: 'json',
-    data: stuff,
+    data: data,
     success: function() {
-      return console.log('ess');
+      return console.log(start + " " + end);
     },
     error: function() {
       console.log('error');
-      return console.log(stuff);
     }
   });
 }
@@ -52,7 +46,7 @@ function initDateRangePicker() {
     },
     opens: 'right',
     drops: 'down',
-    buttonClasses: ['btn', 'btn-sm'],
+    buttonClasses: ['btn-block', 'btn-sm'],
     applyClass: 'btn-primary',
     cancelClass: 'btn-default',
     separator: ' to ',
@@ -67,6 +61,7 @@ function initDateRangePicker() {
         firstDay: 1
     }
 }, function(start, end, label) {
-    $('#picker span.date').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+    $('.js-dateRange').val(start.format('MMM D, YY') + ' to ' + end.format('MMM D, YY'));
+    initSubmitAjax(start.format('YYYY-M-D'), end.format('YYYY-M-D'));
 });
 }
