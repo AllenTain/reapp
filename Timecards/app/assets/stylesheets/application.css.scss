@@ -13,14 +13,19 @@
  *= require_tree .
  *= require_self
  *= require bootstrap-datepicker
+ *= require daterangepicker-bs3
  */
 
 /* Global Variables */
-$brand-primary-darker: #2980B9;
-$brand-primary: #3498DB;
-$grey: #E7E7E7;
-$red-color: #E74C3C;
-$secondary-blue: #2C3E50;
+$brand-primary: 		#3498DB;
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+$grey: 					#E7E7E7;
+$red-color: 			#E74C3C;
+$secondary-blue: 		#2C3E50;
+$body-bg: 				#F7F7F7;
 
 /* Import Vendor CSS */
 @import "bootstrap";
@@ -31,13 +36,43 @@ $secondary-blue: #2C3E50;
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 
+/* Defaults */
+* {
+  	margin: 0;
+  	padding: 0; 
+}
 
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* Bootstrap */
+.btn-primary {
+    box-shadow: 0 3px 0 0 darken($brand-primary,20);
+}
+.btn-danger {
+    box-shadow: 0 3px 0 0 darken($red-color,20);
+}
+.btn-success {
+	box-shadow: 0 3px 0 0 darken($brand-success,20);
+}
+.btn-secondary {
+	box-shadow: 0 3px 0 0 darken($grey,20);
+}
+.btn-warning {
+	box-shadow: 0 3px 0 0 darken($brand-warning,20);
+}
+.btn-danger {
+	box-shadow: 0 3px 0 0 darken($brand-danger,20);
+}
 
 /* Helpers */
 
 .bg-main {
-    background-color: $grey;
+    background-color: #ffffff;
     color: #9FB3B8;
+    border-bottom: 1px solid $grey;
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,0.05)
 }
 
 .noPadding {
@@ -50,10 +85,14 @@ $secondary-blue: #2C3E50;
 }
 
 .colCentered {
+	display: block;
     float: none;
     margin: 0 auto;
 }
 
+.input-sm{
+	padding: 0.16rem 0.75rem;
+}
 
 /* Horizontal Nav Bar */
 
@@ -97,13 +136,13 @@ $secondary-blue: #2C3E50;
     width: 250px;
 }
 
-#pageContentWrapper {
+#pageContentWrapper .nav {
     padding: 15px;
     position: absolute;
     width: 100%;
 }
 
-#wrapper.toggled #pageContentWrapper {
+#wrapper.toggled #pageContentWrapper  {
     margin-right: -220px;
     position: absolute;
 }
@@ -124,6 +163,9 @@ $secondary-blue: #2C3E50;
     transition: all 0.5s ease;
 }
 
+#sidebarWrapper hr{
+	border-top: 1px solid rgba(255,255,255,0.08);
+}
 
 /* Sidebar Styles */
 
@@ -142,8 +184,8 @@ $secondary-blue: #2C3E50;
 
 .sidebarNav li {
     color: #fff;
-    font-size: 1em;
-    line-height: 40px;
+    font-size: 0.9em;
+    line-height: 35px;
 }
 
 .sidebarNav > .sidebarHeading {
@@ -174,7 +216,7 @@ $secondary-blue: #2C3E50;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 700;
-    height: 54px;
+    height: 47px;
     line-height: 47px;
 }
 
@@ -185,7 +227,7 @@ $secondary-blue: #2C3E50;
 }
 
 .sidebarNav > .activeTab {
-    background-color: #fff;
+    background-color: #F7F7F7;
 }
 
 .activeTab a {
@@ -211,13 +253,36 @@ $secondary-blue: #2C3E50;
     }
     #wrapper.toggled #pageContentWrapper {
         margin-right: 0;
+        padding-left: 60px;
         position: relative;
+    }
+    #wrapper.toggled nav{
+    	padding-left: 60px;
     }
 }
 
+/* User Profile */
+#userProfileImage{
+	float: right;
+	display: inline-block;
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	background: url(http://hellogiggles.hellogiggles.netdna-cdn.com/wp-content/uploads/2014/05/09/olivia-wilde-featured.jpg) no-repeat;
+	background-size: 35px 35px;
+}
 
+#profileNavDropdown{
+	margin-top: 35px;
+	margin-right:35px;
+
+}
 /* Pills and Alignment */
 
 .notificationPill {
-    margin-left: 10%;
+    margin-top:9px;
+    margin-right:5px;
 }

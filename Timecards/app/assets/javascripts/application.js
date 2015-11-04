@@ -18,6 +18,8 @@
 //= require tether
 //= require bootstrap-datepicker/core
 //= require bootstrap-sprockets
+//= require moment
+//= require daterangepicker
 
 //Window on Load Function
 $(window).load(function() {
@@ -45,5 +47,6 @@ function initToolTips(boolean) {
         $('[data-toggle="tooltip"]').tooltip('enable');
     } else {
         $('[data-toggle="tooltip"]').tooltip('disable');
+
     }
 }

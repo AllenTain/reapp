@@ -50,3 +50,7 @@ end
 
 # Use Font Awesome
 gem 'font-awesome-sass', '~> 4.4.0'
+
+# Use Moment
+gem 'momentjs-rails'
+gem 'bootstrap-daterangepicker-rails'
