@@ -5,6 +5,8 @@ class TimecardsController < ApplicationController
   def index
     @timecards 	= Timecard.all
     @timecard 	= Timecard.new
+    puts params
+    @params = params
     unless params[:start_date].nil? || params[:end_date].nil?
       @dateRange = Date.strptime(params[:start_date],'%m/%d/%Y')..Date.strptime(params[:end_date],'%m/%d/%Y') 
     else
