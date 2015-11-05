@@ -16,7 +16,7 @@ function initSubmitAjax(start, end)  {
     data: data,
     success: function() {
       return console.log(start + " " + end);
-      //$('#timecardsTable').html("<%==j render partial: 'timecards/timecardsTable', locals: { dateRange: @dateRange } %>");
+      //o$('#timecardsTable').html("<%==j render partial: 'timecards/timecardsTable', locals: { dateRange: @dateRange } %>");
     },
     error: function() {
       console.log('error');
