@@ -240,11 +240,12 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .sidebarNav > .activeTab {
-    background-color: #F7F7F7;
+	border-left: 3px solid $brand-primary;
+    background-color: darken($secondary-blue, 10);
 }
 
 .activeTab a {
-    color: $secondary-blue !important;
+    color: #fff !important;
 }
 
 @media(min-width:768px) {
@@ -297,5 +298,6 @@ h1,h2,h3,h4,h5,h6{
 
 .notificationPill {
     margin-top:9px;
-    margin-right:5px;
+    margin-right:10px;
 }
+
