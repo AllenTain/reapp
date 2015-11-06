@@ -8,14 +8,13 @@ function init() {
 }
 
 function initSubmitAjax(start, end)  {
-  var data = {'startDate':start , 'endDate':end}
+  var filter = {'startDate':start , 'endDate':end}
   return $.ajax({
-    url: '/timecards',
-    method: 'get',
-    dataType: 'json',
-    data: data,
-    success: function() {
-      return console.log(start + " " + end);
+    url: '/timecards/show',
+    type: "get",
+    data: filter,
+    success: function(data) {
+      $('#timecardsTable').html(data);
     },
     error: function() {
       console.log('error');

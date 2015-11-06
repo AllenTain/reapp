@@ -1,25 +1,24 @@
 class TimecardsController < ApplicationController
   def new
+    @timecard = Timecard.new
   end
 
   def index
-    @timecards 	= Timecard.all
-    @timecard 	= Timecard.new
-    puts params
-    @params = params
-    unless params[:start_date].nil? || params[:end_date].nil?
-      @dateRange = Date.strptime(params[:start_date],'%m/%d/%Y')..Date.strptime(params[:end_date],'%m/%d/%Y') 
-    else
-      @dateRange = []
-    end
+    @timecards = Timecard.all
   end
 
   def show
+    unless params[:startDate].nil? || params[:endDate].nil?
+      @dateRange = Date.strptime(params[:startDate])..Date.strptime(params[:endDate]) 
+    else
+      @dateRange = []
+    end
+    @timecards = Timecard.where(:occurrence => @dateRange)
+    .where(:exceptions => true)
+    puts @timecards
+    render :partial => 'timecardsTable', :locals => {:dateRange => @dateRange}
   end
 
   def create
-    respond_to do |format|
-      format.html{ render action: "new"}
-    end
   end
 end
