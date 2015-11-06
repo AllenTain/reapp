@@ -5,6 +5,7 @@ $(window).load(function() {
 function init() {
   initDatePicker();
   initDateRangePicker();
+  initTableTabs();
 }
 
 function initSubmitAjax(start, end)  {
@@ -48,7 +49,7 @@ function initDateRangePicker() {
     drops: 'down',
     buttonClasses: ['btn-block', 'btn-sm'],
     applyClass: 'btn-primary',
-    cancelClass: 'btn-default',
+    cancelClass: 'btn-danger',
     separator: ' to ',
     locale: {
         applyLabel: 'Submit',
@@ -64,4 +65,11 @@ function initDateRangePicker() {
     $('.js-dateRange').val(start.format('MMM D, YY') + ' to ' + end.format('MMM D, YY'));
     initSubmitAjax(start.format('YYYY-M-D'), end.format('YYYY-M-D'));
 });
+}
+
+function initTableTabs(){
+  $(".tableTab").click(function(e) {
+        $(this).siblings().removeClass('activeTableTab');
+        $(this).addClass('activeTableTab');
+    });
 }

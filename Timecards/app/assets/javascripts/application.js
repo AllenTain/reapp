@@ -20,10 +20,12 @@
 //= require bootstrap-sprockets
 //= require moment
 //= require daterangepicker
+//=	require mousetrap/mousetrap.min.js
 
 //Window on Load Function
 $(window).load(function() {
     initMenuToggle();
+    initKeyboardShortcuts();
 });
 
 //initMenu and init the on click listener 
@@ -51,4 +53,11 @@ function initToolTips(boolean) {
     } else {
         $sideMenuTooltips.tooltip('disable');
     }
+}
+
+function initKeyboardShortcuts(){
+	Mousetrap.bind('[', toggleSidebar);
+	function toggleSidebar() {
+		$('#menuToggle').click();
+	}
 }

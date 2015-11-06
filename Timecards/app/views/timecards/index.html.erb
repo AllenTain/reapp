@@ -87,7 +87,10 @@
       </span>
     </div>
   </div>
-  <div class="col-sm-2 col-md-2 col-lg-2 pull-right">
+  <div class="col-sm-4 col-md-4 col-lg-4 pull-right">
+    <button type="button" class="btn btn-danger btn-sm">
+    14 Exceptions Found <i class="fa fa-times-circle-o"></i>
+    </button>
     <div class="btn-group pull-right">
       <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Export
@@ -101,34 +104,115 @@
   </div>
 </div>
 <hr>
-<table class="table table-hover">
-  <thead class="thead-inverse">
-    <tr>
-      <th>Exception</th>
-      <th>Date</th>
-      <th>Worked</th>
-      <th>Overtime</th>
-      <th>Break</th>
-      <th>Total</th>
-      <th>In</th>
-      <th>Out</th>
-      <th>In</th>
-      <th>Out</th>
-    </tr>
-  </thead>
-  <% @timecards.each do |timecard| %>
-  <tr>
-    <td><%= timecard[:name] %></td>
-    <td><%= timecard[:occurrence] %></td>
-    <td><%= timecard[:worked_hours] %></td>
-    <td><%= timecard[:overtime_hours] %></td>
-    <td><%= timecard[:break_hours] %></td>
-    <td><%= timecard[:total_hours] %></td>
-    <td><%= timecard[:exceptions] %></td>
-    <td><%= timecard[:exceptions] %></td>
-    <td><%= timecard[:exceptions] %></td>
-    <td><%= timecard[:exceptions] %></td>
-  </tr>
-  <% end %>
-</table>
+<div id="tabWrapper">
+  <ul id="tabList">
+    <li class="tableTab activeTableTab" >All</li>
+    <li class="tableTab">Hourly</li>
+    <li class="tableTab">Non-hourly</li>
+  </ul>
+  <div id="timecardsTable" class="col-sm-12 col-md-12 col-lg-12 table-responsive">
+    <table class="table table-striped">
+      <thead class="thead-inverse">
+        <tr>
+          <th>Exception</th>
+          <th>Date</th>
+          <th>Worked</th>
+          <th>Overtime</th>
+          <th>Break</th>
+          <th>Total</th>
+          <th>In</th>
+          <th>Out</th>
+          <th>In</th>
+          <th>Out</th>
+        </tr>
+      </thead>
+      <% @timecards.each do |timecard| %>
+      <tr>
+        <td><%= timecard[:name] %></td>
+        <td><%= timecard[:occurrence] %></td>
+        <td><%= timecard[:worked_hours] %></td>
+        <td><%= timecard[:overtime_hours] %></td>
+        <td><%= timecard[:break_hours] %></td>
+        <td><%= timecard[:total_hours] %></td>
+        <td><%= timecard[:exceptions] %></td>
+        <td><%= timecard[:exceptions] %></td>
+        <td><%= timecard[:exceptions] %></td>
+        <td><%= timecard[:exceptions] %></td>
+      </tr>
+      <% end %>
+      <tr>
+        <td><i class="fa fa-check-circle"></i></td>
+        <td>Dec, 21, 2017</td>
+        <td>8.0</td>
+        <td>0.0</td>
+        <td>1.0</td>
+        <td>8.0</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td><i class="fa fa-check-circle"></i></td>
+        <td>Dec, 21, 2017</td>
+        <td>8.0</td>
+        <td>0.0</td>
+        <td>1.0</td>
+        <td>8.0</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td><i class="fa fa-check-circle"></i></td>
+        <td>Dec, 21, 2017</td>
+        <td>8.0</td>
+        <td>0.0</td>
+        <td>1.0</td>
+        <td>8.0</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td><i class="fa fa-check-circle"></i></td>
+        <td>Dec, 21, 2017</td>
+        <td>8.0</td>
+        <td>0.0</td>
+        <td>1.0</td>
+        <td>8.0</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td><i class="fa fa-check-circle"></i></td>
+        <td>Dec, 21, 2017</td>
+        <td>8.0</td>
+        <td>0.0</td>
+        <td>1.0</td>
+        <td>8.0</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td><i class="fa fa-check-circle"></i></td>
+        <td>Dec, 21, 2017</td>
+        <td>8.0</td>
+        <td>0.0</td>
+        <td>1.0</td>
+        <td>8.0</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+    </table>
+  </div>
+</div>
 <%= @params %>
