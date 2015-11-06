@@ -8,15 +8,13 @@ function init() {
 }
 
 function initSubmitAjax(start, end)  {
-  var data = {'startDate':start , 'endDate':end}
+  var filter = {'startDate':start , 'endDate':end}
   return $.ajax({
-    url: '/timecards',
+    url: '/timecards/show',
     type: "get",
-    dataType: "json",
-    data: data,
-    success: function() {
-      return console.log(start + " " + end);
-      //$('#timecardsTable').html("<%==j render partial: 'timecards/timecardsTable', locals: { dateRange: @dateRange } %>");
+    data: filter,
+    success: function(data) {
+      $('#timecardsTable').html(data);
     },
     error: function() {
       console.log('error');

@@ -14,9 +14,19 @@
     </tr>
   </thead>
 <% dateRange.each do |date| %>
+  <% if date  %>
 <tr>
   <td>no</td>
+  <td><%= date %></td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
 </tr>
+  <% end%>
 <% end %>
-<%= dateRange %>
 </table>
