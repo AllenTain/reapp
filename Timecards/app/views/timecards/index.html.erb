@@ -87,7 +87,10 @@
       </span>
     </div>
   </div>
-  <div class="col-sm-2 col-md-2 col-lg-2 pull-right">
+  <div class="col-sm-4 col-md-4 col-lg-4 pull-right">
+    <button type="button" class="btn btn-danger btn-sm">
+    14 Exceptions Found <i class="fa fa-times-circle-o"></i>
+    </button>
     <div class="btn-group pull-right">
       <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Export
@@ -101,5 +104,14 @@
   </div>
 </div>
 <hr>
-<div id ="timecardsTable"></div>
+<div id="tabWrapper">
+  <ul id="tabList">
+    <li class="tableTab activeTableTab" >All</li>
+    <li class="tableTab">Hourly</li>
+    <li class="tableTab">Non-hourly</li>
+  </ul>
+  <div id="timecardsTable" class="col-sm-12 col-md-12 col-lg-12 table-responsive">
+  </div>
+</div>
+
 

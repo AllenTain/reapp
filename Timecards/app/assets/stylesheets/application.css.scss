@@ -17,15 +17,20 @@
  */
 
 /* Global Variables */
-$brand-primary: 		#3498DB;
+$brand-primary: 		#5F97FB;
 $brand-success:         #5cb85c !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
-$brand-danger:          #d9534f !default;
+$brand-danger:          #E74C3C !default;
 $grey: 					#E7E7E7;
+$dark-grey:				#86899D;
 $red-color: 			#E74C3C;
-$secondary-blue: 		#2C3E50;
-$body-bg: 				#F7F7F7;
+$sidebar-color: 		#2F313A;
+$body-bg: 				#EBEDF3;
+
+
+$rounded-corner: 		5px;
+$customBorder-width: 	3px;
 
 /* Import Vendor CSS */
 @import "bootstrap";
@@ -48,22 +53,28 @@ h1,h2,h3,h4,h5,h6{
 
 /* Bootstrap */
 .btn-primary {
-    box-shadow: 0 3px 0 0 darken($brand-primary,20);
+    box-shadow: 0 $customBorder-width 0 0 darken($brand-primary,7);
+    border: none !important;
 }
 .btn-default {
-    box-shadow: 0 3px 0 0 darken($grey,20);
+    box-shadow: 0 $customBorder-width 0 0 darken($grey,7);
+    border: none !important;
 }
 .btn-danger {
-    box-shadow: 0 3px 0 0 darken($red-color,20);
+    box-shadow: 0 $customBorder-width 0 0 darken($red-color,7);
+    border: none !important;
 }
 .btn-success {
-	box-shadow: 0 3px 0 0 darken($brand-success,20);
+	box-shadow: 0 $customBorder-width 0 0 darken($brand-success,7);
+	border: none !important;
 }
 .btn-warning {
-	box-shadow: 0 3px 0 0 darken($brand-warning,20);
+	box-shadow: 0 $customBorder-width 0 0 darken($brand-warning,7);
+	border: none !important;
 }
 .btn-danger {
-	box-shadow: 0 3px 0 0 darken($brand-danger,20);
+	box-shadow: 0 $customBorder-width 0 0 darken($brand-danger,7);
+	border: none !important;
 }
 .inputLabel{
 	font-size: 0.7em;
@@ -125,10 +136,6 @@ h1,h2,h3,h4,h5,h6{
 #wrapper {
     overflow-x: hidden;
     padding-left: 0;
-    // -webkit-transition: all 0.5s ease;
-    // -moz-transition: all 0.5s ease;
-    // -o-transition: all 0.5s ease;
-    // transition: all 0.5s ease;
 }
 
 #wrapper.toggled {
@@ -161,7 +168,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 #sidebarWrapper {
-    background: $secondary-blue;
+    background: $sidebar-color;
     height: 100%;
     left: 250px;
     margin-left: -250px;
@@ -170,10 +177,6 @@ h1,h2,h3,h4,h5,h6{
     position: fixed;
     width: 0;
     z-index: 1000;
-    // -webkit-transition: all 0.5s ease;
-    // -moz-transition: all 0.5s ease;
-    // -o-transition: all 0.5s ease;
-    // transition: all 0.5s ease;
 }
 
 #sidebarWrapper hr{
@@ -207,7 +210,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .sidebarNav li a {
-    color: #849DB5;
+    color: #849DB5; 
     display: block;
     padding-left: 20px;
     text-decoration: none;
@@ -229,7 +232,7 @@ h1,h2,h3,h4,h5,h6{
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 700;
-    height: 47px;
+    height: 51px;
     line-height: 47px;
 }
 
@@ -240,11 +243,12 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .sidebarNav > .activeTab {
-    background-color: #F7F7F7;
+	border-left: $customBorder-width solid $brand-primary;
+    background-color: darken($sidebar-color, 10);
 }
 
 .activeTab a {
-    color: $secondary-blue !important;
+    color: #fff !important;
 }
 
 @media(min-width:768px) {
@@ -276,26 +280,75 @@ h1,h2,h3,h4,h5,h6{
 
 /* User Profile */
 #userProfileImage{
-	float: right;
-	display: inline-block;
-	position: absolute;
-	width: 35px;
-	height: 35px;
-	border-radius: 20px;
-	-webkit-border-radius: 20px;
-	-moz-border-radius: 20px;
 	background: url(http://hellogiggles.hellogiggles.netdna-cdn.com/wp-content/uploads/2014/05/09/olivia-wilde-featured.jpg) no-repeat;
 	background-size: 35px 35px;
+	border-radius: 20px;
+	display: inline-block;
+	float: right;
+	height: 35px;
+	width: 35px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
 }
 
-#profileNavDropdown{
-	margin-top: 35px;
-	margin-right:35px;
-
-}
 /* Pills and Alignment */
 
 .notificationPill {
+    margin-right:10px;
     margin-top:9px;
-    margin-right:5px;
+}
+
+/* Tabs */
+#tabWrapper{
+	display: block;	
+	min-height: 300px;
+	padding-bottom: 2rem;
+	width: 100%;
+}
+#tabList{
+	background-color: white;
+}
+
+#tabWrapper ul{
+	clear:left;
+	left:50%;
+	list-style:none;
+	margin:0;
+	padding:0;
+	position:relative;
+	text-align:center;
+}
+
+#tabWrapper ul li {
+	background-color: darken($body-bg, 5);
+	border-radius: $rounded-corner $rounded-corner 0px 0px;
+	color: $dark-grey;
+	display:block;
+	float:left;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	height: auto;
+	list-style:none;
+	margin-right: 0.5rem;
+	padding: 4px 10px;
+	position: relative;
+	right:50%;
+	width: auto;
+	min-width: 60px;
+    font-size: 0.8em;
+}
+
+.activeTableTab {
+	background-color: white !important;
+	color: $brand-primary !important;
+}
+
+/* Global Table Styles */
+
+.thead-inverse th:first-child{
+  border-radius:$rounded-corner 0 0 $rounded-corner;
+}
+
+.thead-inverse th:last-child{
+  border-radius:0 $rounded-corner $rounded-corner 0;
 }
